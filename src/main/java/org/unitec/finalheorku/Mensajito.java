@@ -14,7 +14,7 @@ import org.springframework.data.annotation.Id;
 public class Mensajito {
     @Id
      
-    private Integer id;
+    private String id;
     
     private String titulo;
     private String cuerpo;
@@ -22,21 +22,21 @@ public class Mensajito {
     public Mensajito() {
     }
 
-    public Mensajito(Integer id) {
+    public Mensajito(String id) {
         this.id = id;
     }
 
-    public Mensajito(Integer id, String titulo, String cuerpo) {
+    public Mensajito(String titulo, String cuerpo) {
         
         this.titulo = titulo;
         this.cuerpo = cuerpo;
     }
     
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
