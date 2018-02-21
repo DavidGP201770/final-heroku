@@ -24,7 +24,7 @@ public class ControladorMensajes {
     
     @RequestMapping(value="/mensajito", method=RequestMethod.GET,headers={"Accept=application/json"})
     public ArrayList<Mensajito> hola(){
-        
+         
         return (ArrayList<Mensajito>) repoMensa.findAll(); 
     }
 }
