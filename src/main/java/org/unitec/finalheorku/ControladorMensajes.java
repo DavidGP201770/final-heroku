@@ -31,10 +31,21 @@ public class ControladorMensajes {
         return (ArrayList<Mensajito>) repoMensa.findAll();
     }
 
-    @RequestMapping(value="mensajito/{titulo}/{cuerpo}", method = RequestMethod.GET, headers = {"Accept=application/json"})
-    public Estatus guardar(@PathVariable String titulo, @PathVariable String cuerpo) {
-        repoMensa.save(new Mensajito(titulo, cuerpo));
+    @RequestMapping(value="mensajito/{id}/{titulo}/{cuerpo}", method = RequestMethod.GET, headers = {"Accept=application/json"})
+    public Estatus guardar(@PathVariable String id,@PathVariable String titulo, @PathVariable String cuerpo) {
+        repoMensa.save(new Mensajito(id,titulo, cuerpo));
         return new Estatus(true, "Guardado con éxito");
         
     }
+    
+    @RequestMapping(value="mensajito/{id}/", method = RequestMethod.DELETE, headers = {"Accept=application/json"})
+    public Estatus borrar(@PathVariable String id) {
+        Estatus estatus = new Estatus(true,"Borrado con éxito");
+        repoMensa.delete(new Mensajito(id));
+        
+        return estatus;
+    }
+    
+    
+    
 }

@@ -5,6 +5,8 @@
  */
 package org.unitec.finalheorku;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import org.springframework.data.annotation.Id;
 
 /**
@@ -15,13 +17,38 @@ public class Mensajito {
     @Id
      
     private String id;
-    
     private String titulo;
     private String cuerpo;
-
+    private LocalDate fecha;
+    private LocalTime hr;
+    
     public Mensajito() {
     }
 
+    public Mensajito(String id, String titulo, String cuerpo, LocalDate fecha) {
+        this.id = id;
+        this.titulo = titulo;
+        this.cuerpo = cuerpo;
+        fecha=LocalDate.now();
+        hr=LocalTime.now();
+    }
+
+    public Mensajito(String id, String titulo, String cuerpo, LocalDate fecha, LocalTime hr) {
+        this.id = id;
+        this.titulo = titulo;
+        this.cuerpo = cuerpo;
+        fecha=LocalDate.now();
+        hr=LocalTime.now();
+    }
+
+    public Mensajito(String id, String titulo, String cuerpo) {
+        this.id = id;
+        this.titulo = titulo;
+        this.cuerpo = cuerpo;
+    }
+
+    
+    
     public Mensajito(String id) {
         this.id = id;
     }
@@ -30,6 +57,8 @@ public class Mensajito {
         
         this.titulo = titulo;
         this.cuerpo = cuerpo;
+        fecha=LocalDate.now();
+        hr=LocalTime.now();
     }
     
     public String getId() {
@@ -54,5 +83,21 @@ public class Mensajito {
 
     public void setCuerpo(String cuerpo) {
         this.cuerpo = cuerpo;
+    }
+
+    public LocalDate getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(LocalDate fecha) {
+        this.fecha = fecha;
+    }
+
+    public LocalTime getHr() {
+        return hr;
+    }
+
+    public void setHr(LocalTime hr) {
+        this.hr = hr;
     }
 }
