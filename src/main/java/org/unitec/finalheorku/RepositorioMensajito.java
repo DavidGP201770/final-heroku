@@ -12,6 +12,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  *
  * @author DavidUGP-Work
  */
-public interface RepositorioMensajito extends MongoRepository<Mensajito, Integer>{
+public interface RepositorioMensajito extends MongoRepository<Mensajito, String>{
     
 }
